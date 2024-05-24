@@ -1,0 +1,10 @@
+{
+    "git.optimisticUpdate": false,
+    "git.showActionButton": {
+        "commit": false,
+        "publish": false,
+        "sync": false
+    },
+    "git.showCommitInput": false,
+    "scm.countBadge": "off"
+}

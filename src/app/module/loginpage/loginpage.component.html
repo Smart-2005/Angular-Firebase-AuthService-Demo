@@ -1,0 +1,25 @@
+<div style="width: 100%; height: 90vh; display: flex; align-items: center; justify-content: center;">
+    
+<form class="login-form" >
+    <div class="login-header">
+        <h1>Login Page</h1>
+    </div>
+
+    <div class="login-body">
+        <label style="position: relative; right: 180px;" for="email"> <b>Email</b></label>
+        <input name="email" class="login email" type="email" [(ngModel)]="email">
+        <Label style="position: relative; right: 170px; " for="password"> <b>Password</b></Label>
+        <input name="password" class="login password" type="password" [(ngModel)]="password">
+    </div>
+    
+    <div class="login-button">
+        <button class="loginBtn" type="submit" (click)="login()" >Login</button>
+    </div>
+</form>
+</div>
+
+
+
+
+
+
