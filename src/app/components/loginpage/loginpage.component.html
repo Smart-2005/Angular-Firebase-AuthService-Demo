@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href=""><img style="height: 45px; width: 45px;" src="../../../assets/Logo.png" alt=""></a>
+    </div>
+</nav> 
+
+<div class="login-page">
+    <div class="login-card">
+
+        <div class="login-img">
+            <img src="../../../assets/login-img.jpg" alt="">
+        </div>
+        <form class="login-form" #loginForm = "ngForm" (ngSubmit)="login()">
+            <div class="login-header">
+                <h2 style="border-bottom: 4px solid #11548a; color: #11548a;">Login Form</h2>
+                <p style="padding-top: 15px; padding: 0px 10px;" >Lorem ipsum dolor sit amet consectetur necessitatibus sint dolorem pariatur ad vel a minima?</p>
+            </div>
+            <div class="login-body">
+                <div>
+                    <label for="email" class="form-label"> <b>Email</b> </label>
+                    <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    [(ngModel)]="email"
+                    #emailInput="ngModel"
+                    required
+                    email>
+                <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
+                    Please enter a valid email.
+                </div>
+                </div>
+                <div>
+                    <label for="password" class="form-label"> <b> Password</b></label>
+                    <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                    [(ngModel)]="password"
+                    #passwordInput="ngModel"
+                    required
+                    minlength="6">
+                <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">
+                    Password must be at least 6 characters long.
+                </div>
+                </div>
+
+            </div>
+            
+            <div class="login-button">
+                <button class="loginBtn" type="submit" [disabled]="loginForm.invalid" >Login</button>
+                <a routerLink="/signuppage">Don't have an account?</a>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+
+
+
+
+

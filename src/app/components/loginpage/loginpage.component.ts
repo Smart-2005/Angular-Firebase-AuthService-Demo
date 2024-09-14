@@ -15,18 +15,7 @@ export class LoginpageComponent {
   constructor(private auth: AuthService){}
 
   login(){
-    if(this.email == ''){
-      alert('Please Enter Your Email');
-      return
-    }
-    if(this.password == ''){
-      alert('Please Enter Your Password');
-      return
-    }
     this.auth.login(this.email,this.password);
-    this.email= '';
-    this.password= '';
-
   };
 }
 

@@ -13,17 +13,6 @@ export class SignupPageComponent {
   constructor(private auth: AuthService){}
 
   signUp(){
-    if(this.email == ''){
-      alert('Please Enter Your Email');
-      return
-    }
-    if(this.password == ''){
-      alert('Please Enter Your Password');
-      return
-    }
-    this.auth.signUp(this.email,this.password);
-    this.email= '';
-    this.password= '';
-
+    this.auth.signUp(this.email,this.password)
   };
 }

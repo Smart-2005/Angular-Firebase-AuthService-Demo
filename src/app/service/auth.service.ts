@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { error, log } from 'console';
-import { Unsubscribe } from 'firebase/app-check';
+
 
 
 
@@ -21,12 +20,12 @@ export class AuthService {
         this.router.navigate(['/loginpage'])
 
     });
-    
+
     },error =>{
 
-      console.log(error);
+      alert("Your Email has already in use!");
       this.router.navigate(['/signuppage'])
-      
+
      })
   }
 
@@ -38,11 +37,12 @@ export class AuthService {
           if (user.emailVerified) {
             // User email is verified
             localStorage.setItem('token', 'true');
+            alert("Login Success!")
             this.router.navigate(['']);
           } else {
               alert('Please verify your email address!');
               this.router.navigate(['/loginpage']);
-              
+
           }
         } else {
           alert('An error occurred during login. Please try again later.');
